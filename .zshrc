@@ -117,9 +117,10 @@ alias rune="flatpak run com.adamcake.Bolt &"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export DEEPSEEK_API_KEY="sk-6f0798a79c224e51b2c7243c7307a388"
 # export TERM=xterm
 
 export XDG_CURRENT_DESKTOP=sway flameshot gui
 export PATH=$PATH:/usr/local/go/bin
 #export rune=flatpak run "com.adamcake.Bolt"
+export PATH="$PATH:/home/roazzolini/.local/bin"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
