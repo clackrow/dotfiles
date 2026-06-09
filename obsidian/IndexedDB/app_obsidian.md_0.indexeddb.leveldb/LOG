@@ -1,0 +1,12 @@
+2026/06/09-06:40:28.775 dc5 Reusing MANIFEST /home/roazzolini/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/09-06:40:28.775 dc5 Recovering log #310
+2026/06/09-06:40:28.804 dc5 Reusing old log /home/roazzolini/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000310.log 
+2026/06/09-06:41:28.837 dc6 Level-0 table #315: started
+2026/06/09-06:41:28.898 dc6 Level-0 table #315: 1502113 bytes OK
+2026/06/09-06:41:28.904 dc6 Delete type=0 #310
+2026/06/09-06:44:43.377 dc5 Compacting 1@1 + 1@2 files
+2026/06/09-06:44:43.437 dc5 Generated table #316@1: 2740 keys, 838409 bytes
+2026/06/09-06:44:43.437 dc5 Compacted 1@1 + 1@2 files => 838409 bytes
+2026/06/09-06:44:43.441 dc5 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/06/09-06:44:43.442 dc5 Delete type=2 #312
+2026/06/09-06:44:43.442 dc5 Delete type=2 #315

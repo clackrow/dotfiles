@@ -1,0 +1,108 @@
+
+* {
+    font-size:16px;
+    font-family: "Caskaydia Cove";
+}
+window#waybar{
+    all:unset;
+}
+.modules-left {
+    border-radius: 0px;
+    border-bottom-right-radius:10px;
+    background: rgb(66, 34, 112);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    padding-right:5px;
+}
+.modules-center {
+    padding:0px;
+    margin: 0px;
+    border-radius:10px;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    background: rgb(66, 34, 112);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-right {
+    padding:0px;
+    margin:0px;
+    border-radius:0px;
+    border-bottom-left-radius:10px;
+    background: rgb(66, 34, 112);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+tooltip {
+    background: rgb(66, 34, 112);
+    color: @color7;
+}
+#custom-notification {
+    padding: 0px;
+    font-size:22px;
+    transition: all .3s ease;
+    color:@color7;
+    margin: 0px 10px 0px 10px;
+}
+#clock{
+    padding: 0px;
+    transition: all .3s ease;
+    margin: 0px 5px 0px 5px;;
+}
+#custom-screenshot {
+    font-size:16px;
+    margin: 0px 10px 0px 10px;
+}
+#workspaces {
+    margin-left: 0px;
+}
+#workspaces button {
+    padding: 2px;
+    font-size: 10px;
+}
+#bluetooth{
+    padding: 4px;
+    transition: all .3s ease;
+    color:@color7;
+    margin: 0px 5px 0px 5px;
+    font-size:16px;
+
+}
+#network{
+    padding: 4px;
+    transition: all .3s ease;
+    color:@color7;
+    margin: 0px 5px 0px 5px;
+
+}
+#battery{
+    padding: 4px;
+    transition: all .3s ease;
+    color:@color7;
+    font-size:16px;
+    margin: 0px 5px 0px 5px;
+}
+#battery.charging {
+    color: #26A65B;
+    margin: 0px 5px 0px 5px;;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+    margin: 0px 5px 0px 5px;;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin: 0px 5px 0px 5px;;
+}
+#pulseaudio {
+    margin: 0px 10px 0px 10px;
+    font-size:16px;
+}
+#backlight {
+    margin: 0px 10px 0px 10px;
+    font-size:16px;
+}

@@ -1,0 +1,18 @@
+# ~/.config/i3blocks/config
+
+separator=false
+separator_block_width=8
+
+[wireless]
+command=nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2
+interval=5
+label=󰤥 
+color=#C2D076
+
+[battery]
+command=~/.config/i3blocks/battery_scaled.sh
+interval=10
+
+[time]
+command=date '+  %d/%m  %H:%M'
+interval=1
