@@ -1,108 +1,184 @@
-
 * {
-    font-size:16px;
-    font-family: "Caskaydia Cove";
+    font-family: "Caskaydia Cove Nerd Font";
+    font-size: 13px;
+    min-height: 0;
 }
-window#waybar{
-    all:unset;
+
+window#waybar {
+    background: rgba(0, 21, 20, 0.95);
+    color: #C2D076;
+
+    border-bottom: 1px solid rgba(194, 208, 118, 0.12);
 }
-.modules-left {
-    border-radius: 0px;
-    border-bottom-right-radius:10px;
-    background: rgb(66, 34, 112);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-    padding-right:5px;
-}
-.modules-center {
-    padding:0px;
-    margin: 0px;
-    border-radius:10px;
-    border-top-left-radius:0px;
-    border-top-right-radius:0px;
-    background: rgb(66, 34, 112);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
+
+/* --------------------------------------------------
+ * Left / Center / Right sections
+ * -------------------------------------------------- */
+
+.modules-left,
+.modules-center,
 .modules-right {
-    padding:0px;
-    margin:0px;
-    border-radius:0px;
-    border-bottom-left-radius:10px;
-    background: rgb(66, 34, 112);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    margin: 0;
+    padding: 0 6px;
 }
-tooltip {
-    background: rgb(66, 34, 112);
-    color: @color7;
-}
-#custom-notification {
-    padding: 0px;
-    font-size:22px;
-    transition: all .3s ease;
-    color:@color7;
-    margin: 0px 10px 0px 10px;
-}
-#clock{
-    padding: 0px;
-    transition: all .3s ease;
-    margin: 0px 5px 0px 5px;;
-}
-#custom-screenshot {
-    font-size:16px;
-    margin: 0px 10px 0px 10px;
-}
+
+/* --------------------------------------------------
+ * Workspaces
+ * -------------------------------------------------- */
+
 #workspaces {
-    margin-left: 0px;
+    margin: 0 8px;
 }
+
 #workspaces button {
-    padding: 2px;
-    font-size: 10px;
-}
-#bluetooth{
-    padding: 4px;
-    transition: all .3s ease;
-    color:@color7;
-    margin: 0px 5px 0px 5px;
-    font-size:16px;
+    all: unset;
 
-}
-#network{
-    padding: 4px;
-    transition: all .3s ease;
-    color:@color7;
-    margin: 0px 5px 0px 5px;
+    min-width: 20px;
 
+    padding: 0 8px;
+    margin: 4px 2px;
+
+    border-radius: 6px;
+
+    color: #6d7d45;
+
+    transition:
+        background-color 150ms ease,
+        color 150ms ease;
 }
-#battery{
-    padding: 4px;
-    transition: all .3s ease;
-    color:@color7;
-    font-size:16px;
-    margin: 0px 5px 0px 5px;
+
+#workspaces button.focused {
+    background: rgba(194, 208, 118, 0.18);
+    color: #C2D076;
 }
+
+#workspaces button:hover {
+    background: rgba(194, 208, 118, 0.10);
+    color: #d8e6a4;
+}
+
+/* --------------------------------------------------
+ * Shared module styling
+ * -------------------------------------------------- */
+
+#clock,
+#network,
+#pulseaudio,
+#bluetooth,
+#backlight,
+#battery,
+#tray,
+#custom-launcher,
+#custom-screenshot {
+    min-width: 24px;
+
+    padding: 0 10px;
+    margin: 2px;
+
+    border-radius: 6px;
+
+    color: #C2D076;
+
+    transition:
+        background-color 150ms ease,
+        color 150ms ease;
+}
+
+#clock:hover,
+#network:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#backlight:hover,
+#battery:hover,
+#custom-launcher:hover,
+#custom-screenshot:hover {
+    background: rgba(194, 208, 118, 0.10);
+    color: #d8e6a4;
+}
+
+/* --------------------------------------------------
+ * Clock
+ * -------------------------------------------------- */
+
+#clock {
+    font-weight: 600;
+}
+
+/* --------------------------------------------------
+ * Audio
+ * -------------------------------------------------- */
+
+#pulseaudio.muted {
+    color: #7a7a7a;
+}
+
+/* --------------------------------------------------
+ * Bluetooth
+ * -------------------------------------------------- */
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #7a7a7a;
+}
+
+/* --------------------------------------------------
+ * Battery
+ * -------------------------------------------------- */
+
 #battery.charging {
-    color: #26A65B;
-    margin: 0px 5px 0px 5px;;
+    color: #8fbc8f;
 }
 
 #battery.warning:not(.charging) {
-    color: #ffbe61;
-    margin: 0px 5px 0px 5px;;
+    color: #ebcb8b;
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    margin: 0px 5px 0px 5px;;
+    color: #bf616a;
 }
-#pulseaudio {
-    margin: 0px 10px 0px 10px;
-    font-size:16px;
+
+#battery.critical:not(.charging) {
+    animation: blink 0.8s linear infinite alternate;
 }
+
+@keyframes blink {
+    to {
+        opacity: 0.4;
+    }
+}
+
+/* --------------------------------------------------
+ * Tray
+ * -------------------------------------------------- */
+
+#tray {
+    padding-right: 6px;
+}
+
+/* --------------------------------------------------
+ * Tooltip
+ * -------------------------------------------------- */
+
+tooltip {
+    background: #001514;
+
+    border: 1px solid rgba(194, 208, 118, 0.15);
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #C2D076;
+}
+
+/* --------------------------------------------------
+ * Optional: make icon modules perfectly centered
+ * -------------------------------------------------- */
+
+#custom-launcher,
+#custom-screenshot,
+#network,
+#bluetooth,
+#pulseaudio,
 #backlight {
-    margin: 0px 10px 0px 10px;
-    font-size:16px;
+    font-size: 15px;
 }
