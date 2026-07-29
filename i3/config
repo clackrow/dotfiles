@@ -5,6 +5,10 @@ set $mod Mod4
 input type:keyboard {
     xkb_layout br
 }
+input type:touchpad {
+    accel_profile flat
+    pointer_accel 0.7
+}
 
 ### Appearance
 
@@ -17,6 +21,7 @@ smart_gaps on
 client.focused   #C2D076 #C2D076 #001514 #C2D076
 client.unfocused #001514 #001514 #001514 #001514
 
+
 ### Wallpaper
 output "*" bg ~/Pictures/wallpaper.jpg fill
 
@@ -24,15 +29,22 @@ output "*" bg ~/Pictures/wallpaper.jpg fill
 
 exec_always waybar
 exec_always mako
+exec_always syncthing serve
 
 exec swayidle -w \
-    timeout 300 'swaylock -f' \
+    timeout 600 'swaylock -f' \
+    timeout 610 'systemctl suspend' \
     before-sleep 'swaylock -f'
 
 ### Terminal
 
 set $term kitty
 bindsym $mod+Return exec $term
+
+### Scratchpad
+
+bindsym $mod+minus exec bash -c 'swaymsg "[app_id=\"scratchterm\"] scratchpad show" || kitty --class scratchterm'
+for_window [app_id="scratchterm"] floating enable, border pixel 1, resize set 80 ppt 60 ppt
 
 ### Launcher
 
@@ -42,6 +54,8 @@ bindsym $mod+d exec $menu
 ### Browser
 
 bindsym $mod+b exec firefox
+bindsym $mod+o exec ~/AppImages/obsidian
+
 
 ### Kill
 
@@ -94,6 +108,20 @@ bindsym $mod+space focus mode_toggle
 
 bindsym $mod+a focus parent
 
+### Window Rules
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [app_id="pavucontrol"] floating enable, resize set 50 ppt 50 ppt, move position center
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating disable
+
+### Workspace Assignments
+
+assign [app_id="firefox"] workspace number 2
+assign [app_id="obsidian"] workspace number 3
+assign [app_id="org.gnome.Nautilus"] workspace number 4
+
 ### Workspaces
 
 bindsym $mod+1 workspace number 1
@@ -130,6 +158,10 @@ bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
+### Blue Light
+
+bindsym $mod+Ctrl+n exec bash -c 'if pgrep -x wlsunset > /dev/null; then pkill -x wlsunset; else wlsunset -l -25.4 -L -49.3 & fi'
+
 ### Screenshot
 
 bindsym Print exec grim ~/Pictures/$(date +'%Y-%m-%d_%H-%M-%S').png
@@ -164,3 +196,9 @@ input type:touchpad {
     dwt enabled          # disable while typing
     middle_emulation enabled
 }
+bindswitch --reload --locked lid:on exec systemctl suspend
+bindswitch --reload --locked lid:off exec swaymsg "output * dpms on"
+
+exec kitty
+exec firefox
+exec ~/AppImages/obsidian

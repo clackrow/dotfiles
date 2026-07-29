@@ -69,7 +69,8 @@ window#waybar {
 #battery,
 #tray,
 #custom-launcher,
-#custom-screenshot {
+#custom-screenshot,
+#custom-power {
     min-width: 24px;
 
     padding: 0 10px;
@@ -91,7 +92,8 @@ window#waybar {
 #backlight:hover,
 #battery:hover,
 #custom-launcher:hover,
-#custom-screenshot:hover {
+#custom-screenshot:hover,
+#custom-power:hover {
     background: rgba(194, 208, 118, 0.10);
     color: #d8e6a4;
 }
@@ -176,6 +178,7 @@ tooltip label {
 
 #custom-launcher,
 #custom-screenshot,
+#custom-power,
 #network,
 #bluetooth,
 #pulseaudio,

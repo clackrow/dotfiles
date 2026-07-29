@@ -1,6 +1,6 @@
 [user]
 	name = Rodrigo Azzolini
-	email = rodrigo-azz@proton.me
+	email = guigoazzolini@gmail.com
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential

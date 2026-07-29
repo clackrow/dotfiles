@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="half-life"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -26,7 +26,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -109,7 +109,7 @@ alias :q="exit"
 alias :wq="exit"
 alias cd="z"
 alias pi="ssh roazzolini@192.168.0.4"
-alias rune="flatpak run com.adamcake.Bolt &"
+alias dwarf="~/Dwarf/run_df"
 
 # bun completions
 [ -s "/home/roazzolini/.bun/_bun" ] && source "/home/roazzolini/.bun/_bun"
@@ -124,3 +124,7 @@ export PATH=$PATH:/usr/local/go/bin
 #export rune=flatpak run "com.adamcake.Bolt"
 export PATH="$PATH:/home/roazzolini/.local/bin"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# opencode
+export PATH=/home/roazzolini/.opencode/bin:$PATH

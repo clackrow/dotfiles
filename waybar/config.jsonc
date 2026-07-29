@@ -18,7 +18,9 @@
         "pulseaudio",
         "bluetooth",
         "battery",
-        "tray"
+        "tray",
+        "network",
+        "custom/power"
     ],
 
     "sway/workspaces": {
@@ -29,7 +31,7 @@
 
     "custom/launcher": {
         "tooltip": false,
-        "format": "󱄅",
+        "format": "",
         "on-click": "wofi --show drun"
     },
 
@@ -121,5 +123,11 @@
     "tray": {
         "icon-size": 14,
         "spacing": 10
+    },
+
+    "custom/power": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "$HOME/.config/dotfiles/waybar/scripts/powermenu.sh"
     }
 }
