@@ -108,8 +108,7 @@ alias .="nvim ."
 alias :q="exit"
 alias :wq="exit"
 alias cd="z"
-alias pi="ssh roazzolini@192.168.0.4"
-alias dwarf="~/Dwarf/run_df"
+alias sbreset="supabase db reset && supabase gen types --local > src/lib/database.types.ts"
 
 # bun completions
 [ -s "/home/roazzolini/.bun/_bun" ] && source "/home/roazzolini/.bun/_bun"
@@ -128,3 +127,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # opencode
 export PATH=/home/roazzolini/.opencode/bin:$PATH
+export PATH="$HOME/AppImages/:$PATH"
