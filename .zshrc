@@ -128,3 +128,18 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # opencode
 export PATH=/home/roazzolini/.opencode/bin:$PATH
 export PATH="$HOME/AppImages/:$PATH"
+
+coffee() {
+    systemd-inhibit --what=idle:sleep --why="coffee" bash -c '
+        while true; do
+            printf "\r☕ Keeping awake... |"
+            sleep 0.2
+            printf "\r☕ Keeping awake... /"
+            sleep 0.2
+            printf "\r☕ Keeping awake... -"
+            sleep 0.2
+            printf "\r☕ Keeping awake... \\"
+            sleep 0.2
+        done
+    '
+}
