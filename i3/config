@@ -57,7 +57,6 @@ bindsym $mod+d exec $menu
 ### Browser
 
 bindsym $mod+b exec firefox
-bindsym $mod+o exec ~/AppImages/obsidian
 
 
 ### Kill
